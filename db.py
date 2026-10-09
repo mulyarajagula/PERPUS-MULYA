@@ -1,10 +1,3 @@
-"""
-db.py
-Modul database bersama untuk seluruh aplikasi (dipakai oleh login.py,
-daftar.py, mainpage.py, kelolauser.py, kelolabuku.py, kelolapeminjamam.py).
-Memakai sqlite3 bawaan Python, jadi tidak perlu instalasi tambahan.
-"""
-
 import sqlite3
 import os
 from datetime import datetime
@@ -16,9 +9,9 @@ def layar_penuh(jendela):
     """Membuka jendela dalam keadaan maksimal (layar penuh).
     Tombol F11 = fullscreen tanpa bingkai, Esc = kembali normal."""
     try:
-        jendela.state("zoomed")  # Windows & Linux
+        jendela.state("zoomed")  
     except Exception:
-        jendela.attributes("-fullscreen", True)  # cadangan untuk macOS
+        jendela.attributes("-fullscreen", True)  
     jendela.bind("<F11>", lambda e: jendela.attributes(
         "-fullscreen", not jendela.attributes("-fullscreen")))
     jendela.bind("<Escape>", lambda e: jendela.attributes("-fullscreen", False))
@@ -64,7 +57,7 @@ def init_db():
         status TEXT DEFAULT 'Dipinjam'
     )""")
 
-    # buat akun petugas contoh jika database masih kosong
+  
     cur.execute("SELECT COUNT(*) FROM users")
     if cur.fetchone()[0] == 0:
         cur.execute(
@@ -87,7 +80,6 @@ def init_db():
     conn.close()
 
 
-# ---------------- USER ----------------
 
 def cek_login(email, password):
     conn = get_conn()
@@ -139,8 +131,6 @@ def hapus_user(id_user):
     conn.commit()
     conn.close()
 
-
-# ---------------- BUKU ----------------
 
 def tambah_buku(judul, penulis, kategori, stok, rating=0):
     status = "Tersedia" if int(stok) > 0 else "Habis"
@@ -195,8 +185,6 @@ def ubah_stok_buku(id_buku, delta):
         conn.commit()
     conn.close()
 
-
-# ---------------- PEMINJAMAN ----------------
 
 def tambah_peminjaman(user_id, buku_id, tgl_pinjam, jatuh_tempo):
     conn = get_conn()
