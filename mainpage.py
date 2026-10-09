@@ -20,7 +20,7 @@ class HalamanUtama(tk.Tk):
         self._buat_konten()
 
     def _buat_sidebar(self):
-        sisi = tk.Frame(self, bg="#fafbfc", width=110)
+        sisi = tk.Frame(self, bg="#fafbfc", width=135)
         sisi.pack(side="left", fill="y")
         sisi.pack_propagate(False)
 
