@@ -1,8 +1,3 @@
-"""
-kelolauser.py
-Halaman kelola user: tambah, ubah, hapus, cari, dan filter berdasarkan peran.
-Hanya dapat diakses oleh Petugas (dicek dari mainpage.py).
-"""
 
 import tkinter as tk
 from tkinter import ttk, messagebox
