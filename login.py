@@ -1,9 +1,3 @@
-"""
-login.py
-Halaman login sekaligus titik masuk (entry point) aplikasi.
-Jalankan file ini untuk memulai program: python login.py
-"""
-
 import tkinter as tk
 from tkinter import ttk, messagebox
 import db
@@ -23,7 +17,6 @@ class HalamanLogin(tk.Tk):
         self._buat_tampilan()
 
     def _buat_tampilan(self):
-        # panel kiri (informasi)
         kiri = tk.Frame(self, bg=WARNA_BG_AKSEN, width=250)
         kiri.pack(side="left", fill="both")
         kiri.pack_propagate(False)
@@ -32,8 +25,6 @@ class HalamanLogin(tk.Tk):
                  fg=WARNA_AKSEN, bg=WARNA_BG_AKSEN).pack()
         tk.Label(kiri, text="Kelola koleksi, anggota, dan\npeminjaman dalam satu sistem",
                  font=("Segoe UI", 9), fg=WARNA_AKSEN, bg=WARNA_BG_AKSEN, justify="center").pack(pady=8)
-
-        # panel kanan (form login)
         kanan = tk.Frame(self, bg="white")
         kanan.pack(side="left", fill="both", expand=True, padx=30, pady=30)
 
