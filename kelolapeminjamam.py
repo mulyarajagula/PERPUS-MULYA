@@ -1,8 +1,3 @@
-"""
-kelolapeminjamam.py
-Halaman kelola peminjaman: catat peminjaman baru, tandai buku kembali
-(dengan denda otomatis jika terlambat), hapus riwayat, dan filter status.
-"""
 
 import tkinter as tk
 from tkinter import ttk, messagebox
