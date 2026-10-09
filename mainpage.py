@@ -1,9 +1,3 @@
-"""
-mainpage.py
-Halaman utama (dasbor) setelah login berhasil. Berisi sidebar navigasi
-menuju halaman kelola buku, kelola user, dan kelola peminjaman.
-"""
-
 import tkinter as tk
 from tkinter import messagebox
 from datetime import datetime
@@ -17,7 +11,7 @@ WARNA_ABU = "#6b7280"
 class HalamanUtama(tk.Tk):
     def __init__(self, user):
         super().__init__()
-        self.user = user  # dict: id, nama, email, peran, ...
+        self.user = user  
         self.title("Perpus Digital - Dasbor")
         self.geometry("980x600")
         db.layar_penuh(self)
@@ -33,7 +27,6 @@ class HalamanUtama(tk.Tk):
         tk.Label(sisi, text="📚 Perpus Digital", font=("Segoe UI", 11, "bold"),
                  bg="#fafbfc").pack(pady=20)
 
-        # Tombol navigasi biasa, sederhana tanpa binding rumit
         tk.Button(sisi, text="🏠 Utama", font=("Segoe UI", 9, "bold"), fg=WARNA_AKSEN,
                   bg="#fafbfc", relief="flat", anchor="w",
                   command=lambda: None).pack(fill="x", padx=10, pady=4)
