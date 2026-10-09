@@ -1,8 +1,3 @@
-"""
-kelolabuku.py
-Halaman kelola buku: tambah, ubah, hapus, dan cari judul/penulis.
-"""
-
 import tkinter as tk
 from tkinter import ttk, messagebox
 import db
