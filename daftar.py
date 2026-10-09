@@ -1,8 +1,3 @@
-"""
-daftar.py
-Halaman pendaftaran akun baru (khusus peran Anggota).
-"""
-
 import tkinter as tk
 from tkinter import ttk, messagebox
 import db
